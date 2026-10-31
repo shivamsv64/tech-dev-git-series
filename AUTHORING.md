@@ -4,6 +4,7 @@
 2. Preview: `python3 engine.py episodes/epNN.py out/epNN --stills 5,30,60,90,120,150` → look at the JPGs (Read tool). Fix overlaps/overflow.
 3. Render: `python3 engine.py episodes/epNN.py out/epNN` (~2–3 min on 2 cores). Outputs: video.mp4, thumbnail.jpg, upload.txt/json, script.txt, audio_music_only.wav.
 4. Spot-check 2 frames from the final mp4 with ffmpeg, then publish (see RUNBOOK in the scheduled-task prompt).
+   Hosting: GitHub Releases are blocked for the automation session, so copy video.mp4 + thumbnail.jpg into `media/epNN/`, commit and push; Metricool pulls them from `https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/epNN/video.mp4` (worked for Ep 1).
 
 ## Episode file
 `EP = {'num', 'title', 'short' (header text), 'scenes': [...], 'thumb': {...}, 'upload': {...}}`

@@ -1,11 +1,13 @@
 [
  {
   "ep": 1,
-  "date": "Sat 31 Oct",
+  "date": "Sat 31 Oct (6:40 PM)",
   "title": "What is Git? Why every developer needs it",
   "analogy": "resume_final_v2_REAL files; game checkpoints; Google Docs history; Git = camera, GitHub = Instagram",
   "devops": "push → Jenkins CI/CD; infra as code; rollbacks",
-  "status": "ready"
+  "status": "scheduled",
+  "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep01/video.mp4",
+  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-7758275436848855125"
  },
  {
   "ep": 2,
