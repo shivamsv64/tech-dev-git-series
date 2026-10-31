@@ -7,7 +7,14 @@
   "devops": "push → Jenkins CI/CD; infra as code; rollbacks",
   "status": "scheduled",
   "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep01/video.mp4",
-  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-7758275436848855125"
+  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-7758275436848855125",
+  "short": {
+   "status": "scheduled",
+   "live": "2026-11-01T11:30:00+05:30",
+   "metricool_id": 412217247,
+   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-2922331148524435981",
+   "title": "What is Git? Explained by an Elephant #shorts #git"
+  }
  },
  {
   "ep": 2,
