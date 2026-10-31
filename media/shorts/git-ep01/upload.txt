@@ -1,0 +1,13 @@
+TITLE
+What is Git? Explained by an Elephant #shorts #git
+
+DESCRIPTION
+Git is a time machine for your code: every commit is a save point you can jump back to. Git is the camera, GitHub is where you share, and one git push can trigger Jenkins CI/CD.
+
+Full episode: "What is Git? Why every developer needs it | Git & GitHub Ep 1" on the Tech-dev channel.
+New Git episode every day at 4 PM IST.
+
+#shorts #Git #GitHub #DevOps #TechDev
+
+TAGS
+git, github, what is git, git vs github, git tutorial, git for beginners, shorts, git commit, git push, devops, ci cd, jenkins, tech-dev
