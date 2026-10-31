@@ -1,7 +1,7 @@
 [
  {
   "ep": 1,
-  "date": "Sat 31 Oct (6:40 PM)",
+  "date": "Sat 31 Oct (6:45 PM)",
   "title": "What is Git? Why every developer needs it",
   "analogy": "resume_final_v2_REAL files; game checkpoints; Google Docs history; Git = camera, GitHub = Instagram",
   "devops": "push → Jenkins CI/CD; infra as code; rollbacks",
