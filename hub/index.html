@@ -1,0 +1,180 @@
+<title>Git Series Tracker</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: one column "commit log" — episodes as nodes on a vertical branch line, newest work highlighted */
+:root{--bg:#0a0f1f;--panel:#111a33;--line:#25325a;--fg:#e8eef8;--muted:#93a1bd;--cyan:#38bdf8;--amber:#fbbf24;--violet:#a78bfa;--green:#34d399;--red:#f87171;
+--display:"Poppins",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--body)}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{font:500 13px var(--mono);color:var(--green);letter-spacing:.04em}
+.brand span{color:var(--fg);font-family:var(--display);font-weight:600;margin-left:6px}
+h1{font:700 clamp(28px,5vw,42px)/1.15 var(--display);margin:14px 0 8px;text-wrap:balance}
+.tri{display:flex;gap:6px;margin:18px 0 8px}.tri i{height:5px;width:56px;border-radius:3px}
+.lede{color:var(--muted);max-width:62ch;margin:0}
+.meter{display:flex;align-items:center;gap:14px;margin:26px 0 30px;font:500 13px var(--mono);color:var(--muted)}
+.bar{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar b{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--amber),var(--violet))}
+ol{list-style:none;margin:0;padding:0;position:relative}
+ol::before{content:"";position:absolute;left:27px;top:8px;bottom:8px;width:3px;background:var(--line);border-radius:2px}
+.ep{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:0 0 18px;position:relative}
+.num{width:56px;height:56px;border-radius:50%;background:var(--bg);border:3px solid var(--line);display:grid;place-content:center;text-align:center;font:500 10px/1 var(--mono);color:var(--muted);z-index:1}
+.num b{display:block;font:700 18px/1.1 var(--display);color:var(--fg)}
+.body{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+h3{font:600 17px/1.3 var(--display);margin:0;text-wrap:balance;min-width:0}
+.pill{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.date{margin:4px 0 10px;font:500 12px var(--mono);color:var(--muted)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:14px}
+dt{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em;padding-top:2px}dd{margin:0;min-width:0}
+.links{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.links a{color:var(--cyan);font-weight:600;text-decoration:none}.links a:hover,.links a:focus-visible{text-decoration:underline}
+.s-ready .num,.s-scheduled .num{border-color:var(--amber)}.s-ready .pill,.s-scheduled .pill{color:var(--amber);border-color:var(--amber)}
+.s-published .num{border-color:var(--green);background:#0f2e27}.s-published .pill{color:var(--green);border-color:var(--green)}
+.s-failed .pill{color:var(--red);border-color:var(--red)}
+@media (max-width:520px){dl{grid-template-columns:1fr}.ep{grid-template-columns:44px 1fr;gap:12px}.num{width:44px;height:44px}ol::before{left:21px}}
+</style>
+<div class="wrap">
+  <div class="brand">&gt;_<span>Tech-dev</span></div>
+  <div class="tri"><i style="background:var(--cyan)"></i><i style="background:var(--amber)"></i><i style="background:var(--violet)"></i></div>
+  <h1>Git &amp; GitHub: Beginner to Advanced</h1>
+  <p class="lede">15 animated episodes of 2–5 minutes, one published every day at 4:00 PM IST from 31 Oct to 14 Nov 2026. Each one pairs a real-life analogy with a real DevOps example.</p>
+  <div class="meter"><span>0 / 15 scheduled or live</span><div class="bar"><b style="width:0%"></b></div></div>
+  <ol>
+<li class="ep s-ready">
+  <div class="num">EP<b>01</b></div>
+  <div class="body">
+    <div class="top"><h3>What is Git? Why every developer needs it</h3><span class="pill">Rendered</span></div>
+    <p class="date">Sat 31 Oct · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>resume_final_v2_REAL files; game checkpoints; Google Docs history; Git = camera, GitHub = Instagram</dd><dt>DevOps angle</dt><dd>push → Jenkins CI/CD; infra as code; rollbacks</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>02</b></div>
+  <div class="body">
+    <div class="top"><h3>Install &amp; Configure Git (Win/Mac/Linux) + aliases</h3><span class="pill">Planned</span></div>
+    <p class="date">Sun 1 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Name tag on every parcel you send (user.name / email); speed-dial = aliases</dd><dt>DevOps angle</dt><dd>Wrong email on commits breaks audit trails &amp; GitHub contribution graph; CI bots have their own identity</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>03</b></div>
+  <div class="body">
+    <div class="top"><h3>What is a Git Repository? `git init` &amp; the .git folder</h3><span class="pill">Planned</span></div>
+    <p class="date">Mon 2 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>A notebook with a hidden CCTV logbook (.git) that records every page change; delete the logbook = history gone</dd><dt>DevOps angle</dt><dd>Every microservice / Terraform module lives in its own repo</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>04</b></div>
+  <div class="body">
+    <div class="top"><h3>status, add &amp; commit — the 3 areas of Git</h3><span class="pill">Planned</span></div>
+    <p class="date">Tue 3 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Sending a courier: items on table (working dir) → packed box (staging) → shipped with tracking no. (commit)</dd><dt>DevOps angle</dt><dd>Small focused commits = easy code review &amp; safe deploys</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>05</b></div>
+  <div class="body">
+    <div class="top"><h3>git log &amp; git commit --amend — fix your last commit</h3><span class="pill">Planned</span></div>
+    <p class="date">Wed 4 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Editing your last WhatsApp message vs. a sent letter</dd><dt>DevOps angle</dt><dd>Fixing a typo&#x27;d commit message before pushing; never amend pushed shared commits</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>06</b></div>
+  <div class="body">
+    <div class="top"><h3>.gitignore — never commit secrets again</h3><span class="pill">Planned</span></div>
+    <p class="date">Thu 5 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Packing for a trip: don&#x27;t pack your house keys (.env) or the whole kitchen (node_modules)</dd><dt>DevOps angle</dt><dd>Real incident type: AWS keys pushed to a public repo get abused within minutes → rotate keys</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>07</b></div>
+  <div class="body">
+    <div class="top"><h3>Branches: create, switch, rename, delete (+ checkout)</h3><span class="pill">Planned</span></div>
+    <p class="date">Fri 6 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Parallel drafts of a speech; road lanes</dd><dt>DevOps angle</dt><dd>feature/*, hotfix/* branches; protected main</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>08</b></div>
+  <div class="body">
+    <div class="top"><h3>Merging branches &amp; fixing merge conflicts</h3><span class="pill">Planned</span></div>
+    <p class="date">Sat 7 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Two people editing the same sentence of a shared doc</dd><dt>DevOps angle</dt><dd>Conflicts in config/YAML files during release merges</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>09</b></div>
+  <div class="body">
+    <div class="top"><h3>git restore — undo uncommitted changes</h3><span class="pill">Planned</span></div>
+    <p class="date">Sun 8 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Ctrl+Z before you save; un-packing an item from the box</dd><dt>DevOps angle</dt><dd>Accidentally edited a prod config file locally — restore it</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>10</b></div>
+  <div class="body">
+    <div class="top"><h3>git reset — soft vs mixed vs hard</h3><span class="pill">Planned</span></div>
+    <p class="date">Mon 9 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Rewinding a video: soft keeps the edit timeline, hard shreds the footage</dd><dt>DevOps angle</dt><dd>Squashing local WIP commits before a PR; danger of --hard</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>11</b></div>
+  <div class="body">
+    <div class="top"><h3>git revert — the safe undo for shared history</h3><span class="pill">Planned</span></div>
+    <p class="date">Tue 10 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Bank reversal entry instead of tearing a page out of the ledger</dd><dt>DevOps angle</dt><dd>Rolling back a bad production release without rewriting history</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>12</b></div>
+  <div class="body">
+    <div class="top"><h3>git stash — save work-in-progress</h3><span class="pill">Planned</span></div>
+    <p class="date">Wed 11 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Guests arrive: put the half-cooked curry in the fridge, serve them, then continue</dd><dt>DevOps angle</dt><dd>Urgent prod hotfix while mid-feature</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>13</b></div>
+  <div class="body">
+    <div class="top"><h3>What is GitHub? Remotes, clone &amp; push</h3><span class="pill">Planned</span></div>
+    <p class="date">Thu 12 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Google Drive for code; &quot;origin&quot; = home address</dd><dt>DevOps angle</dt><dd>Jenkins/GitHub Actions pull from the remote on every push</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>14</b></div>
+  <div class="body">
+    <div class="top"><h3>git fetch vs git pull (+ pull requests)</h3><span class="pill">Planned</span></div>
+    <p class="date">Fri 13 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Fetch = checking your mailbox; pull = opening the letters and acting on them</dd><dt>DevOps angle</dt><dd>PR workflow: review + CI checks before merge to main</dd></dl>
+    
+  </div>
+</li>
+<li class="ep s-planned">
+  <div class="num">EP<b>15</b></div>
+  <div class="body">
+    <div class="top"><h3>git rebase &amp; squash — clean history like a pro (series finale)</h3><span class="pill">Planned</span></div>
+    <p class="date">Sat 14 Nov · 4:00 PM IST</p>
+    <dl><dt>Analogy</dt><dd>Re-coupling your train carriages behind the newest engine</dd><dt>DevOps angle</dt><dd>Clean linear history on main; trunk-based dev in CI/CD; reflog to rescue</dd></dl>
+    
+  </div>
+</li>
+  </ol>
+</div>
