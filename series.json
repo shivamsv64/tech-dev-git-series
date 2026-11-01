@@ -26,7 +26,14 @@
   "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep02/video.mp4",
   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=9022746689596377053",
   "voice_chars": 190,
-  "metricool_id": 412742961
+  "metricool_id": 412742961,
+  "short": {
+   "status": "scheduled",
+   "title": "Git commit failed? Set your name in 30 sec #shorts #git",
+   "live": "2026-11-02T11:30:00+05:30",
+   "metricool_id": 412743274,
+   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-1036704801642820885"
+  }
  },
  {
   "ep": 3,
