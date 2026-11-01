@@ -22,7 +22,11 @@
   "title": "Install & Configure Git (Win/Mac/Linux) + aliases",
   "analogy": "Name tag on every parcel you send (user.name / email); speed-dial = aliases",
   "devops": "Wrong email on commits breaks audit trails & GitHub contribution graph; CI bots have their own identity",
-  "status": "planned"
+  "status": "scheduled",
+  "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep02/video.mp4",
+  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=9022746689596377053",
+  "voice_chars": 190,
+  "metricool_id": 412742961
  },
  {
   "ep": 3,
