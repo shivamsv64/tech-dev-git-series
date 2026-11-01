@@ -25,3 +25,8 @@ Every scene has `type`, optional `chapter` (YouTube chapter name), and `beats`: 
 | `outro` | `next` (rich text), optional `head`, `sub` | `cap` |
 
 Tips: keep monospace lines ≤ 60 chars; terminal shows 14 lines (older lines scroll); `cards` text ≤ 8 words; one idea per caption; include at least one real-life analogy and one real DevOps example per episode; end each episode with quiz → recap → outro whose `next` names the next episode from PLAN.md (Ep 15 outro: thank viewers, tease the next Tech-dev series).
+
+## Length (from Ep 3): 5:00–10:00, aim 6–8 min
+Add depth, not padding. Template: title → bubble hook → concept + analogy → hands-on terminal/lanes/graph scenes for every command in the PLAN.md row (each key flag gets its own beat) → a "what Git does inside" scene (graph or code) → the common mistake (`err: True`) and its fix → the DevOps story from Shivam's work (Jenkins, AWS/GCP, incidents) as cards + terminal → interview corner (`cards`, 2–3 Q&As) → quiz → recap with homework → outro.
+Roughly 50–80 beats. Check the printed total after the stills run; if it is under 5:00, add hands-on beats rather than lengthening captions.
+Full renders take ~8–15 min: run the engine in the background (nohup … &) and poll with short commands, so no single shell call hits the 10-minute tool limit.

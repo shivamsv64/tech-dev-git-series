@@ -1,7 +1,7 @@
 # Tech-dev · Git & GitHub: Beginner → Advanced — Playlist plan
 
 Channel: Tech-dev (YouTube UCZAlvuJrNlK6ORtuN5x06ZQ) · Presenter: Shivam Singh Verma (DevOps & SRE, 5 yrs)
-Format: 2–5 min animated explainers · mascot **Bit** (original robot) · captions + lofi music + SFX · 1080p30
+Format: 5–10 min animated explainers (from Ep 3; Ep 1–2 were ~3 min) · mascot **Bit** (original robot) · captions + lofi music + SFX · 1080p30
 Schedule: **one episode per day, published 4:00 PM IST**. Ep 1 = Sat 31 Oct 2026, Ep 15 = Sat 14 Nov 2026.
 Covers all 18 topics of the reference playlist (Engineering Digest) in 15 tighter episodes, every one with real-life analogies + a real DevOps example.
 
@@ -25,6 +25,6 @@ Covers all 18 topics of the reference playlist (Engineering Digest) in 15 tighte
 
 ## Production rules
 - Every episode: title → hook (bubble) → concept with real-life analogy → hands-on (terminal / lanes / graph) → DevOps example → quiz → recap → outro (16 s end-screen area).
-- Captions ≤ 18 words, highlight 1–2 key words with `*word*`. Target 2:30–4:30 total.
+- Captions ≤ 18 words, highlight 1–2 key words with `*word*`. Target 5:00–10:00 total from Ep 3 (aim 6–8 min): go deeper, not slower — more hands-on terminal scenes, a common mistake + fix, an interview question, and homework in the recap.
 - Thumbnail: 2–3 big words + emoji + badge, mascot pointing. Title format: `<Topic> Explained Simply | Git & GitHub Ep N`.
 - Upload: YouTube via Metricool (brand 7777398), public, scheduled 16:00 Asia/Kolkata, category EDUCATION, not made for kids, not AI-realistic content.

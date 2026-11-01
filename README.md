@@ -1,7 +1,7 @@
 # Tech-dev · Git & GitHub: Beginner → Advanced
 
 Animated explainer series for the **Tech-dev** YouTube channel by Shivam Singh Verma (DevOps & SRE).
-One 2–5 minute episode goes live every day at **4:00 PM IST** (31 Oct → 14 Nov 2026).
+One 5–10 minute episode (Ep 1–2 were ~3 min) goes live every day at **4:00 PM IST** (31 Oct → 14 Nov 2026).
 
 - `engine.py` — renders an episode spec into a 1080p video with the mascot **Bit**, captions, lofi music and sound effects, plus thumbnail, upload text and a timed voiceover script.
 - `episodes/epNN.py` — one spec per episode. `AUTHORING.md` documents the scene types.
