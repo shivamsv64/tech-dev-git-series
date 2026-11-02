@@ -1,0 +1,13 @@
+TITLE
+git init vs rm -rf .git: what is a Git repo? #shorts #git
+
+DESCRIPTION
+git init turns any folder into a repository by creating the hidden .git folder, where objects, refs and HEAD keep your whole history. Delete .git and every commit is gone.
+
+Full episode: "Git Repository & git init Explained Simply | Git & GitHub Ep 3" on the Tech-dev channel.
+New Git episodes Mon, Wed & Fri at 4 PM IST.
+
+#shorts #Git #GitHub #DevOps #TechDev
+
+TAGS
+git init, git repository, .git folder, what is a git repository, git tutorial, git for beginners, shorts, git, github, devops, jenkins, tech-dev
