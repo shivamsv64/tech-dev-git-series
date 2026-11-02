@@ -1,142 +1,147 @@
 [
- {
-  "ep": 1,
-  "date": "Sat 31 Oct (6:45 PM)",
-  "title": "What is Git? Why every developer needs it",
-  "analogy": "resume_final_v2_REAL files; game checkpoints; Google Docs history; Git = camera, GitHub = Instagram",
-  "devops": "push → Jenkins CI/CD; infra as code; rollbacks",
-  "status": "scheduled",
-  "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep01/video.mp4",
-  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-7758275436848855125",
-  "short": {
-   "status": "scheduled",
-   "live": "2026-11-01T11:30:00+05:30",
-   "metricool_id": 412217247,
-   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-2922331148524435981",
-   "title": "What is Git? Explained by an Elephant #shorts #git"
+  {
+    "ep": 1,
+    "date": "Sat 31 Oct (6:45 PM)",
+    "title": "What is Git? Why every developer needs it",
+    "analogy": "resume_final_v2_REAL files; game checkpoints; Google Docs history; Git = camera, GitHub = Instagram",
+    "devops": "push → Jenkins CI/CD; infra as code; rollbacks",
+    "status": "scheduled",
+    "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep01/video.mp4",
+    "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-7758275436848855125",
+    "short": {
+      "status": "scheduled",
+      "live": "2026-11-01T11:30:00+05:30",
+      "metricool_id": 412217247,
+      "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-2922331148524435981",
+      "title": "What is Git? Explained by an Elephant #shorts #git"
+    }
+  },
+  {
+    "ep": 2,
+    "date": "Sun 1 Nov",
+    "title": "Install & Configure Git (Win/Mac/Linux) + aliases",
+    "analogy": "Name tag on every parcel you send (user.name / email); speed-dial = aliases",
+    "devops": "Wrong email on commits breaks audit trails & GitHub contribution graph; CI bots have their own identity",
+    "status": "scheduled",
+    "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep02/video.mp4",
+    "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=9022746689596377053",
+    "voice_chars": 190,
+    "metricool_id": 412742961,
+    "short": {
+      "status": "scheduled",
+      "title": "Git commit failed? Set your name in 30 sec #shorts #git",
+      "live": "2026-11-02T11:30:00+05:30",
+      "metricool_id": 412743274,
+      "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-1036704801642820885"
+    }
+  },
+  {
+    "ep": 3,
+    "date": "Mon 2 Nov",
+    "title": "What is a Git Repository? `git init` & the .git folder",
+    "analogy": "A notebook with a hidden CCTV logbook (.git) that records every page change; delete the logbook = history gone",
+    "devops": "Every microservice / Terraform module lives in its own repo",
+    "status": "scheduled",
+    "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep03/video.mp4",
+    "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-5809524830116821944",
+    "metricool_id": 413683365,
+    "engine": "v2",
+    "voice_chars": 0
+  },
+  {
+    "ep": 4,
+    "date": "Tue 3 Nov",
+    "title": "status, add & commit — the 3 areas of Git",
+    "analogy": "Sending a courier: items on table (working dir) → packed box (staging) → shipped with tracking no. (commit)",
+    "devops": "Small focused commits = easy code review & safe deploys",
+    "status": "planned"
+  },
+  {
+    "ep": 5,
+    "date": "Wed 4 Nov",
+    "title": "git log & git commit --amend — fix your last commit",
+    "analogy": "Editing your last WhatsApp message vs. a sent letter",
+    "devops": "Fixing a typo'd commit message before pushing; never amend pushed shared commits",
+    "status": "planned"
+  },
+  {
+    "ep": 6,
+    "date": "Thu 5 Nov",
+    "title": ".gitignore — never commit secrets again",
+    "analogy": "Packing for a trip: don't pack your house keys (.env) or the whole kitchen (node_modules)",
+    "devops": "Real incident type: AWS keys pushed to a public repo get abused within minutes → rotate keys",
+    "status": "planned"
+  },
+  {
+    "ep": 7,
+    "date": "Fri 6 Nov",
+    "title": "Branches: create, switch, rename, delete (+ checkout)",
+    "analogy": "Parallel drafts of a speech; road lanes",
+    "devops": "feature/*, hotfix/* branches; protected main",
+    "status": "planned"
+  },
+  {
+    "ep": 8,
+    "date": "Sat 7 Nov",
+    "title": "Merging branches & fixing merge conflicts",
+    "analogy": "Two people editing the same sentence of a shared doc",
+    "devops": "Conflicts in config/YAML files during release merges",
+    "status": "planned"
+  },
+  {
+    "ep": 9,
+    "date": "Sun 8 Nov",
+    "title": "git restore — undo uncommitted changes",
+    "analogy": "Ctrl+Z before you save; un-packing an item from the box",
+    "devops": "Accidentally edited a prod config file locally — restore it",
+    "status": "planned"
+  },
+  {
+    "ep": 10,
+    "date": "Mon 9 Nov",
+    "title": "git reset — soft vs mixed vs hard",
+    "analogy": "Rewinding a video: soft keeps the edit timeline, hard shreds the footage",
+    "devops": "Squashing local WIP commits before a PR; danger of --hard",
+    "status": "planned"
+  },
+  {
+    "ep": 11,
+    "date": "Tue 10 Nov",
+    "title": "git revert — the safe undo for shared history",
+    "analogy": "Bank reversal entry instead of tearing a page out of the ledger",
+    "devops": "Rolling back a bad production release without rewriting history",
+    "status": "planned"
+  },
+  {
+    "ep": 12,
+    "date": "Wed 11 Nov",
+    "title": "git stash — save work-in-progress",
+    "analogy": "Guests arrive: put the half-cooked curry in the fridge, serve them, then continue",
+    "devops": "Urgent prod hotfix while mid-feature",
+    "status": "planned"
+  },
+  {
+    "ep": 13,
+    "date": "Thu 12 Nov",
+    "title": "What is GitHub? Remotes, clone & push",
+    "analogy": "Google Drive for code; \"origin\" = home address",
+    "devops": "Jenkins/GitHub Actions pull from the remote on every push",
+    "status": "planned"
+  },
+  {
+    "ep": 14,
+    "date": "Fri 13 Nov",
+    "title": "git fetch vs git pull (+ pull requests)",
+    "analogy": "Fetch = checking your mailbox; pull = opening the letters and acting on them",
+    "devops": "PR workflow: review + CI checks before merge to main",
+    "status": "planned"
+  },
+  {
+    "ep": 15,
+    "date": "Sat 14 Nov",
+    "title": "git rebase & squash — clean history like a pro (series finale)",
+    "analogy": "Re-coupling your train carriages behind the newest engine",
+    "devops": "Clean linear history on main; trunk-based dev in CI/CD; reflog to rescue",
+    "status": "planned"
   }
- },
- {
-  "ep": 2,
-  "date": "Sun 1 Nov",
-  "title": "Install & Configure Git (Win/Mac/Linux) + aliases",
-  "analogy": "Name tag on every parcel you send (user.name / email); speed-dial = aliases",
-  "devops": "Wrong email on commits breaks audit trails & GitHub contribution graph; CI bots have their own identity",
-  "status": "scheduled",
-  "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep02/video.mp4",
-  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=9022746689596377053",
-  "voice_chars": 190,
-  "metricool_id": 412742961,
-  "short": {
-   "status": "scheduled",
-   "title": "Git commit failed? Set your name in 30 sec #shorts #git",
-   "live": "2026-11-02T11:30:00+05:30",
-   "metricool_id": 412743274,
-   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-1036704801642820885"
-  }
- },
- {
-  "ep": 3,
-  "date": "Mon 2 Nov",
-  "title": "What is a Git Repository? `git init` & the .git folder",
-  "analogy": "A notebook with a hidden CCTV logbook (.git) that records every page change; delete the logbook = history gone",
-  "devops": "Every microservice / Terraform module lives in its own repo",
-  "status": "planned"
- },
- {
-  "ep": 4,
-  "date": "Tue 3 Nov",
-  "title": "status, add & commit — the 3 areas of Git",
-  "analogy": "Sending a courier: items on table (working dir) → packed box (staging) → shipped with tracking no. (commit)",
-  "devops": "Small focused commits = easy code review & safe deploys",
-  "status": "planned"
- },
- {
-  "ep": 5,
-  "date": "Wed 4 Nov",
-  "title": "git log & git commit --amend — fix your last commit",
-  "analogy": "Editing your last WhatsApp message vs. a sent letter",
-  "devops": "Fixing a typo'd commit message before pushing; never amend pushed shared commits",
-  "status": "planned"
- },
- {
-  "ep": 6,
-  "date": "Thu 5 Nov",
-  "title": ".gitignore — never commit secrets again",
-  "analogy": "Packing for a trip: don't pack your house keys (.env) or the whole kitchen (node_modules)",
-  "devops": "Real incident type: AWS keys pushed to a public repo get abused within minutes → rotate keys",
-  "status": "planned"
- },
- {
-  "ep": 7,
-  "date": "Fri 6 Nov",
-  "title": "Branches: create, switch, rename, delete (+ checkout)",
-  "analogy": "Parallel drafts of a speech; road lanes",
-  "devops": "feature/*, hotfix/* branches; protected main",
-  "status": "planned"
- },
- {
-  "ep": 8,
-  "date": "Sat 7 Nov",
-  "title": "Merging branches & fixing merge conflicts",
-  "analogy": "Two people editing the same sentence of a shared doc",
-  "devops": "Conflicts in config/YAML files during release merges",
-  "status": "planned"
- },
- {
-  "ep": 9,
-  "date": "Sun 8 Nov",
-  "title": "git restore — undo uncommitted changes",
-  "analogy": "Ctrl+Z before you save; un-packing an item from the box",
-  "devops": "Accidentally edited a prod config file locally — restore it",
-  "status": "planned"
- },
- {
-  "ep": 10,
-  "date": "Mon 9 Nov",
-  "title": "git reset — soft vs mixed vs hard",
-  "analogy": "Rewinding a video: soft keeps the edit timeline, hard shreds the footage",
-  "devops": "Squashing local WIP commits before a PR; danger of --hard",
-  "status": "planned"
- },
- {
-  "ep": 11,
-  "date": "Tue 10 Nov",
-  "title": "git revert — the safe undo for shared history",
-  "analogy": "Bank reversal entry instead of tearing a page out of the ledger",
-  "devops": "Rolling back a bad production release without rewriting history",
-  "status": "planned"
- },
- {
-  "ep": 12,
-  "date": "Wed 11 Nov",
-  "title": "git stash — save work-in-progress",
-  "analogy": "Guests arrive: put the half-cooked curry in the fridge, serve them, then continue",
-  "devops": "Urgent prod hotfix while mid-feature",
-  "status": "planned"
- },
- {
-  "ep": 13,
-  "date": "Thu 12 Nov",
-  "title": "What is GitHub? Remotes, clone & push",
-  "analogy": "Google Drive for code; \"origin\" = home address",
-  "devops": "Jenkins/GitHub Actions pull from the remote on every push",
-  "status": "planned"
- },
- {
-  "ep": 14,
-  "date": "Fri 13 Nov",
-  "title": "git fetch vs git pull (+ pull requests)",
-  "analogy": "Fetch = checking your mailbox; pull = opening the letters and acting on them",
-  "devops": "PR workflow: review + CI checks before merge to main",
-  "status": "planned"
- },
- {
-  "ep": 15,
-  "date": "Sat 14 Nov",
-  "title": "git rebase & squash — clean history like a pro (series finale)",
-  "analogy": "Re-coupling your train carriages behind the newest engine",
-  "devops": "Clean linear history on main; trunk-based dev in CI/CD; reflog to rescue",
-  "status": "planned"
- }
 ]

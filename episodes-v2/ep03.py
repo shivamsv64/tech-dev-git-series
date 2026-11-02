@@ -277,7 +277,7 @@ EP = {
                   'Normal vs bare repositories (git init --bare)', 'Common mistakes: rm -rf .git and git init in your home folder',
                   'DevOps: one repo per service, Jenkins workspaces and rollbacks'],
         'commands': ['mkdir shop-api && cd shop-api', 'git status', 'git init', 'ls -a', 'ls -la .git', 'cat .git/HEAD', 'cat .git/config',
-                     'ls .git/objects', 'find .git/objects -type f', 'git cat-file -t <id>', 'git rev-parse --show-toplevel',
+                     'ls .git/objects', 'find .git/objects -type f', 'git cat-file -t 5cf581c', 'git rev-parse --show-toplevel',
                      'git rev-parse --is-inside-work-tree', 'git init -b main demo', 'git init --bare shop-api.git'],
         'interview': 'What does git init do? What is a bare repository?',
         'quiz': 'What does rm -rf .git delete?',
