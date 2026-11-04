@@ -57,11 +57,24 @@
  },
  {
   "ep": 4,
-  "date": "Tue 3 Nov",
+  "date": "Wed 4 Nov",
   "title": "status, add & commit — the 3 areas of Git",
   "analogy": "Sending a courier: items on table (working dir) → packed box (staging) → shipped with tracking no. (commit)",
   "devops": "Small focused commits = easy code review & safe deploys",
-  "status": "planned"
+  "status": "scheduled",
+  "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep04/video.mp4",
+  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-1621614351431417578",
+  "metricool_id": 416333592,
+  "engine": "v2",
+  "voice_chars": 0,
+  "short": {
+   "status": "scheduled",
+   "title": "When git commit skips your brand new file #shorts #git",
+   "live": "2026-11-05T11:30:00+05:30",
+   "metricool_id": 416333842,
+   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=4273026272401443644",
+   "engine": "skit"
+  }
  },
  {
   "ep": 5,
