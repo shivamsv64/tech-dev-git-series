@@ -1,3 +1,6 @@
+## v3 look (since 5 Nov 2026): own-voice opener + zine scenes
+Every long video starts with a hook opener in Shivam's own ElevenLabs voice (`EP['opener']`, rendered by `v3/opener3d/render.py` or `v3/opener/render.py` into the outdir before the engine runs) and uses the zine scenes `headline`, `board`, `dossier`, `poster` as pattern breaks. With an opener, drop the `hook` scene. Guides: `v3/OPENER.md`, `v3/STYLES.md`, `v3/makers/COMMON.md`.
+
 # Engine v2 — how to write an episode
 
 Engine v2 replaced the animal-cast engines on 2 Nov 2026 for all long videos (DevOps, Linux, Git).
