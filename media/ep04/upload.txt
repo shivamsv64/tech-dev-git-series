@@ -1,0 +1,66 @@
+TITLE
+git status, add & commit Explained Simply | Git & GitHub Ep 4
+
+DESCRIPTION
+Ever committed and found a file missing? Episode 4 explains the 3 areas of Git (working directory, staging area, repository) with a courier-box analogy and real terminal output.
+
+I'm Shivam Singh Verma, a DevOps & SRE engineer with 5 years of experience building CI/CD pipelines, running cloud infrastructure on AWS & GCP, and managing projects.
+
+📺 Git & GitHub: Beginner to Advanced, Episode 4: new episodes every Mon, Wed & Fri at 4 PM IST.
+
+⏱️ Chapters
+0:00 Intro
+0:24 Last episode
+0:54 The 3 areas
+1:46 Hands-on: git status
+2:05 Hands-on: git add
+2:34 Hands-on: git commit
+3:17 Modified files
+4:01 git commit -am
+4:22 git rm --cached
+4:56 What Git does inside
+5:35 Common mistakes
+6:26 DevOps example
+6:58 Interview corner
+7:20 Quiz
+
+🔑 What you'll learn
+• The 3 areas of Git: working directory, staging area (index), repository
+• git status and the short format git status -s
+• git add <file> and git add .
+• git commit -m and what the output means
+• git diff vs git diff --staged
+• git commit -am and why it skips new files
+• git rm --cached to unstage a file without deleting it
+• What add and commit do inside .git
+• DevOps: small focused commits for easy review and safe rollbacks
+
+🧾 Cheat sheet (copy & practice)
+git status
+git status -s
+git add app.py
+git add .
+git commit -m "Add app.py"
+git log --oneline
+git diff
+git diff --staged
+git commit -am "Print v3"
+git rm --cached .env
+git ls-files --stage
+
+🎤 Interview question: What is the staging area in Git? What is the difference between git commit -a and git add + git commit?
+
+🧠 Quiz: git status -s shows "MM app.py". What does it mean? (answer in the comments, reveal in the next episode)
+
+📝 Homework: Create a repo, add three files and make three separate commits. Run git status -s before and after every git add.
+
+➡️ Next: Ep 5: git log & git commit --amend — fix your last commit (Friday, 4 PM IST)
+
+🔔 Subscribe to Tech-dev for practical DevOps, SRE, Cloud, Linux & Git videos.
+
+💬 Do you use git add . or add files one by one?
+
+#Git #GitHub #DevOps #TechDev
+
+TAGS
+git add, git commit, git status, git staging area, git three areas, git tutorial, git for beginners, git and github, learn git, git commit -am, git rm --cached, git diff staged, devops, jenkins, tech-dev

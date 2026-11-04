@@ -1,0 +1,20 @@
+{
+  "title": "When git commit skips your brand new file #shorts #git",
+  "description": "git commit -am only stages files Git already tracks, so a brand new file is skipped. Check with git status -s, git add the new file, then commit.\n\nFull episode: \"git status, add & commit Explained Simply | Git & GitHub Ep 4\" on the Tech-dev channel.\nNew episodes Mon, Wed & Fri, 4 PM IST.\n\n#shorts #Git #GitHub #DevOps #TechDev",
+  "tags": [
+    "git",
+    "git add",
+    "git commit",
+    "git commit -am",
+    "git status",
+    "git staging area",
+    "untracked files",
+    "git tutorial",
+    "git for beginners",
+    "shorts",
+    "github",
+    "devops",
+    "tech-dev"
+  ],
+  "duration": 43.9
+}
