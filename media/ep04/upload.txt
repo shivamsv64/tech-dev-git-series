@@ -27,7 +27,7 @@ I'm Shivam Singh Verma, a DevOps & SRE engineer with 5 years of experience build
 🔑 What you'll learn
 • The 3 areas of Git: working directory, staging area (index), repository
 • git status and the short format git status -s
-• git add <file> and git add .
+• git add file.txt and git add .
 • git commit -m and what the output means
 • git diff vs git diff --staged
 • git commit -am and why it skips new files
