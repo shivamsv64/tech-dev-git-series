@@ -1,0 +1,13 @@
+TITLE
+Typo in your last Git commit? Fix it like this #shorts #git
+
+DESCRIPTION
+Typo in your commit message or a forgotten file? git commit --amend fixes your last commit, but only before you push.
+
+Full video: "Fix Your Last Git Commit (Typo or Missing File) | Git & GitHub Ep 5" on the Tech-dev channel.
+New episode every Tuesday, 4 PM IST.
+
+#shorts #Git #GitHub #DevOps #TechDev
+
+TAGS
+git, git commit --amend, git amend, fix last commit, change git commit message, git log, git tutorial, git for beginners, shorts, github, devops, tech-dev
