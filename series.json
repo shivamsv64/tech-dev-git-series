@@ -78,11 +78,28 @@
  },
  {
   "ep": 5,
-  "date": "Wed 4 Nov",
+  "date": "Tue 10 Nov",
   "title": "git log & git commit --amend — fix your last commit",
   "analogy": "Editing your last WhatsApp message vs. a sent letter",
   "devops": "Fixing a typo'd commit message before pushing; never amend pushed shared commits",
-  "status": "planned"
+  "status": "scheduled",
+  "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep05/video.mp4",
+  "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=7970463080336212143",
+  "metricool_id": 422871381,
+  "engine": "v2",
+  "voice_chars": 304,
+  "opener": "2d",
+  "yt_title": "Fix Your Last Git Commit (Typo or Missing File) | Git & GitHub Ep 5",
+  "live": "2026-11-10T16:00:00+05:30",
+  "short": {
+   "status": "scheduled",
+   "title": "Typo in your last Git commit? Fix it like this #shorts #git",
+   "live": "2026-11-11T11:30:00+05:30",
+   "metricool_id": 422874010,
+   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-4024695753375071501",
+   "engine": "skit",
+   "voice_chars": 88
+  }
  },
  {
   "ep": 6,
