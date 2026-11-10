@@ -1,0 +1,249 @@
+[0:00] (Shivam, opener) [serious] You just hit commit... and then you see it. A typo in the message, and a file you forgot to add. [sighs] Most people make a second commit called oops. [warmly] But Git can fix your last commit in one command. By the end of this video, you'll know how... and the one time you should never do it.
+[0:19] Hi, I'm Shivam Singh Verma, and welcome to Tech-dev.
+[0:22] This is episode five of Git and GitHub,
+[0:25] Beginner to Advanced.
+[0:27] Today you'll learn to read your history with git log,
+[0:30] and to fix your last commit with amend.
+[0:33] Before we start, a quick game.
+[0:35] Which one is worse?
+[0:36] A, a typo in your commit message,
+[0:38] or B, a file you forgot to add?
+[0:41] Type A or B in the comments.
+[0:42] We'll settle it at the end.
+[0:45] Quick recap.
+[0:46] Your files sit in the working directory,
+[0:48] git add packs them into the staging box,
+[0:51] and git commit ships the box into history.
+[0:54] Git status shows all three.
+[0:56] And last episode's quiz.
+[0:58] M M means the file was staged,
+[1:00] and then edited again.
+[1:01] The left M is in the box, the right M is still on your table.
+[1:06] So now you've got commits.
+[1:08] They're like a diary of your project.
+[1:10] Today we read that diary with git log,
+[1:13] and then we learn how to fix the very last page.
+[1:17] Here's the big question.
+[1:18] Can you edit a commit after you made it?
+[1:20] The honest answer is, it depends.
+[1:23] You can fix the last one, but only before anyone else has it.
+[1:27] Think of a WhatsApp message.
+[1:29] You can tap edit and fix a typo.
+[1:31] But a letter you already posted?
+[1:33] It's gone.
+[1:34] To fix it, you send a new letter.
+[1:36] Git commits work the same way.
+[1:38] So here's the life of a commit.
+[1:40] Right after you commit, it lives only on your laptop.
+[1:44] That's the window where amend is completely safe.
+[1:47] Once you push, your team has a copy.
+[1:50] From then on, you fix mistakes with a new commit.
+[1:52] Hold on to that rule, because later we'll break it on purpose
+[1:56] and watch what happens.
+[1:58] Let's open the diary.
+[2:00] In our shop API repo, type git log.
+[2:03] Every commit shows up, newest first.
+[2:05] If the list is long, Git opens a pager.
+[2:08] Press q to quit.
+[2:11] Each entry has four parts.
+[2:13] The commit ID, forty characters long.
+[2:15] The author, from the name and email you set in episode two.
+[2:19] The date.
+[2:20] And the message.
+[2:22] That's a lot of text.
+[2:23] So add minus minus one line.
+[2:25] Now each commit is one line: the short seven character ID,
+[2:29] and the message.
+[2:30] This is the one I type every day.
+[2:34] Minus n two shows only the last two commits.
+[2:37] And minus minus reverse flips the order,
+[2:40] so you read the story from the very first commit.
+[2:45] Want to know which files a commit touched?
+[2:47] Minus minus stat.
+[2:48] Here the last commit added payment dot p y,
+[2:51] one file, one line.
+[2:55] Quick check.
+[2:55] Stat tells you which files changed.
+[2:58] But which flag shows the actual lines?
+[3:00] Pause the video and guess.
+[3:01] It's just one letter.
+[3:03] It's minus p, for patch.
+[3:05] Now you see the real diff inside the commit.
+[3:08] The plus line is the code that was added.
+[3:10] Did you guess right?
+[3:13] Git log walks the whole diary.
+[3:15] Git show opens one page.
+[3:17] Give it a commit ID, and the short one is enough.
+[3:20] You get the details and the diff of that single commit.
+[3:25] No need to copy IDs.
+[3:27] HEAD means your latest commit,
+[3:29] and HEAD tilde one is the one before it.
+[3:31] With a colon and a file name, git show even prints the file
+[3:35] as it was back then.
+[3:38] A few numbers to remember.
+[3:39] The full ID is forty characters,
+[3:42] a hash of the content.
+[3:43] Seven characters are usually enough.
+[3:46] And the number after HEAD tilde counts steps back.
+[3:49] In a big repo, you search.
+[3:51] Minus minus author filters by person.
+[3:53] Minus minus grep searches the messages.
+[3:56] And two dashes plus a file name shows only commits that touched
+[4:00] that file.
+[4:03] You can even build your own format:
+[4:05] short ID, author, message.
+[4:07] And minus minus graph draws the history as a line.
+[4:10] It's straight today, but it gets fun once we add branches.
+[4:15] Screenshot this cheat sheet.
+[4:17] One line for a quick look, minus n for recent work,
+[4:20] stat for files, minus p for the code,
+[4:23] and git show for a single commit.
+[4:26] Now, the problem from the start of the video.
+[4:29] You fix a login bug, you commit in a hurry,
+[4:31] and you make both mistakes at once.
+[4:34] You add login dot p y and commit with the message,
+[4:38] fix L G O I N bug.
+[4:40] Look closely.
+[4:41] The typo is already in your history,
+[4:43] with the ID one one three c eight six one.
+[4:48] And git status shows the second mistake.
+[4:51] The test file, test underscore login dot p y,
+[4:54] is still untracked.
+[4:55] It never went into the box.
+[4:59] So here's our case file.
+[5:00] A wrong message, and a missing file.
+[5:03] The usual reaction is a second commit called oops.
+[5:06] But that leaves a messy diary.
+[5:08] There's a cleaner way.
+[5:10] First, the message.
+[5:11] Type git commit minus minus amend,
+[5:13] minus m, and the correct message.
+[5:16] Git prints the commit again, with the fixed text.
+[5:19] Notice something about the ID?
+[5:22] The log shows only one login commit,
+[5:25] and the typo is gone.
+[5:26] But the ID changed, from one one three c to seven seven nine f.
+[5:31] That's a clue to what amend really does.
+[5:35] Here's the secret.
+[5:36] Amend doesn't edit the old commit.
+[5:38] Commits can never change.
+[5:40] Git builds a brand new commit and puts it in the old one's place.
+[5:45] Now the forgotten file.
+[5:46] Git add it, so it's in the box.
+[5:48] Then git commit minus minus amend,
+[5:51] minus minus no edit.
+[5:52] No edit means keep the same message,
+[5:55] just add what's staged.
+[5:58] Git show stat proves it.
+[6:00] One commit, both files, the right message.
+[6:02] No oops commit anywhere.
+[6:04] And see the date line?
+[6:05] Amend keeps the original author date.
+[6:09] And if you type just git commit minus minus amend,
+[6:12] Git opens your editor with the old message already filled in.
+[6:16] Fix it, save, close, done.
+[6:19] So here are the recipes.
+[6:20] Wrong message, amend minus m.
+[6:23] Forgotten file, add it and amend no edit.
+[6:26] Both at once, add and amend minus m.
+[6:28] And if the author email was wrong,
+[6:30] fix your config and use reset author.
+[6:34] Let's look inside.
+[6:35] Before the amend, main pointed to the typo commit,
+[6:38] one one three c, and its parent was the payment commit.
+[6:42] Amend builds a new commit with the same parent,
+[6:45] the fixed message, and the same files.
+[6:48] Then it moves main to point at the new one.
+[6:51] So we actually made three commits.
+[6:53] The typo one, the fixed message,
+[6:55] and the one with the test file.
+[6:57] Main only shows the last.
+[6:59] The others are hidden, not deleted.
+[7:01] Want proof?
+[7:03] Git reflog is a private diary of everywhere HEAD has been.
+[7:07] There's our typo commit, still alive.
+[7:09] In episode ten, this becomes your safety net.
+[7:14] And now, the one time you should never do it.
+[7:17] Remember the posted letter?
+[7:18] Never amend a commit you've already pushed.
+[7:21] Let's break that rule on purpose and see why.
+[7:24] We push our clean commit to GitHub.
+[7:26] Then we remember the ticket number and amend again.
+[7:29] Locally that works fine.
+[7:31] The new ID is zero five c d.
+[7:35] But status says your branch and origin have diverged.
+[7:38] And git push is rejected.
+[7:40] Non fast forward.
+[7:41] GitHub has one commit, you have a different one,
+[7:44] with the same parent.
+[7:47] The graph shows it clearly.
+[7:49] History has forked.
+[7:50] Your amended commit on one side,
+[7:52] the commit everyone else already has on the other.
+[7:57] Now the tempting shortcut is git push minus minus force.
+[8:01] It overwrites GitHub with your version.
+[8:04] But your teammates already pulled the old commit,
+[8:06] and their next pull turns into a mess.
+[8:09] The fix is to go forward, not back.
+[8:12] First, drop the local amend and return to what GitHub has.
+[8:16] We'll study reset properly in episode ten.
+[8:20] Then make a new commit with the extra info and push normally.
+[8:24] The push goes straight through,
+[8:26] because pushed history only grows.
+[8:28] Nobody on the team gets surprised.
+[8:32] So, the rule of thumb.
+[8:34] Not pushed yet?
+[8:35] Amend freely.
+[8:36] Pushed to a shared branch?
+[8:37] New commit.
+[8:38] On your own feature branch, some teams allow amend plus force
+[8:42] with lease, carefully.
+[8:44] Now the DevOps side.
+[8:46] In pipelines like the Jenkins setups Shivam works with,
+[8:49] every build is tied to a commit ID.
+[8:52] The Docker image tag, the release notes,
+[8:54] the deploy log, all point to it.
+[8:57] Now imagine someone amends and force pushes after that build.
+[9:01] Production is running a1b1010, but that commit is gone from main.
+[9:06] Good luck tracing a bug back to the code.
+[9:10] That's also why teams print the last few commits in the build
+[9:13] log, with a custom git log format.
+[9:16] Who changed what, and when.
+[9:17] It only works if pushed history never gets rewritten.
+[9:22] So real teams build habits.
+[9:24] Amend before you push.
+[9:26] Put the ticket ID in the message the first time.
+[9:29] Protect main so nobody can force push.
+[9:31] And after a push, always fix forward.
+[9:34] Interview corner.
+[9:36] What does commit amend do?
+[9:37] It replaces the last commit with a new one.
+[9:40] Same parent, new ID.
+[9:41] You can change the message, the files, or both.
+[9:45] The follow up: why not amend a pushed commit?
+[9:48] Because it rewrites shared history.
+[9:49] The push is rejected, force pushing breaks your teammates,
+[9:53] and CI loses track.
+[9:55] Fix forward instead.
+[9:57] Back to our game.
+[9:58] A or B?
+[9:59] It was a trick question.
+[10:01] Before you push, one command fixes both:
+[10:04] amend minus m for the message, and git add plus amend no edit
+[10:08] for the file.
+[10:10] Now today's quiz.
+[10:11] You amend a commit.
+[10:12] What happens to its commit ID?
+[10:14] Answer in the comments, and I'll reveal it in the next episode.
+[10:19] Recap.
+[10:20] Git log reads your history, one line keeps it short,
+[10:23] minus p shows the code, git show opens one commit.
+[10:27] Amend fixes the last commit, but never one you've pushed.
+[10:31] Your homework: make a commit with a typo on purpose,
+[10:35] then fix it with amend.
+[10:36] Run git log one line before and after,
+[10:39] and check if the ID changed.
+[10:41] Post both lines in the comments.
+[10:44] Next episode: dot git ignore, how to never commit secrets again.
+[10:48] New episodes every Tuesday at 4 PM.
+[10:51] Subscribe to Tech-dev so you don't miss it.

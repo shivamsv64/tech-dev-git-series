@@ -38,7 +38,7 @@ SERIES = {
     'linux': dict(look='city', show='Linux Zero to Hero',
                   line='📺 Linux Zero to Hero, Episode {n}: a free course with new episodes every Tue, Thu & Sat at 5 PM IST.'),
     'git': dict(look='city', show='Git & GitHub: Beginner to Advanced',
-                line='📺 Git & GitHub: Beginner to Advanced, Episode {n}: new episodes every Mon, Wed & Fri at 4 PM IST.'),
+                line='📺 Git & GitHub: Beginner to Advanced, Episode {n}: new episode every Tuesday at 4 PM IST.'),
 }
 INTRO_CLIP = os.path.join(HERE, 'assets', 'voice', 'intro_shivam.mp3')
 INTRO_TEXT = "Hi, I'm Shivam Singh Verma, and welcome to Tech-dev."
@@ -906,6 +906,8 @@ def clicks(d, seed=3):
     return out
 
 def music_bed(n):
+    if EP.get('music') in ('none', None, False, []) and 'music' in EP:   # no music bed (Shivam, 7 Nov 2026)
+        return np.zeros(n, np.float32)
     tracks = [load_mono(os.path.join(HERE, 'assets', 'music', m)) for m in EP.get('music', TH['music'])]
     xf = int(2.5 * SR); bed = np.zeros(0, np.float32); k = 0
     while len(bed) < n:

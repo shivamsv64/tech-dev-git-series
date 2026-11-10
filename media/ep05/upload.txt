@@ -1,0 +1,70 @@
+TITLE
+Fix Your Last Git Commit (Typo or Missing File) | Git & GitHub Ep 5
+
+DESCRIPTION
+Typo in your commit message? Forgot a file? Episode 5 shows how to read your history with git log and fix your last commit with git commit --amend, plus the one time you should never amend.
+
+I'm Shivam Singh Verma, a DevOps & SRE engineer with 5 years of experience building CI/CD pipelines, running cloud infrastructure on AWS & GCP, and managing projects.
+
+📺 Git & GitHub: Beginner to Advanced, Episode 5: new episode every Tuesday at 4 PM IST.
+
+⏱️ Chapters
+0:00 Intro
+0:44 Last episode
+1:17 The big idea
+1:58 Hands-on: git log
+3:13 git show
+3:49 Search your history
+4:26 The oops commit
+5:09 Fix the message: --amend -m
+5:44 Add a forgotten file: --no-edit
+6:33 What Git does inside
+7:14 The golden rule
+7:24 Mistake: amend after push
+8:09 The fix: fix forward
+8:44 DevOps example
+9:34 Interview corner
+9:57 Quiz
+10:19 Recap
+
+🔑 What you'll learn
+• git log and the four parts of a log entry
+• git log --oneline, -n, --reverse, --stat and -p
+• git show with a commit ID, HEAD~1 and HEAD~1:file
+• Searching history with --author, --grep and -- file
+• git commit --amend -m to fix a commit message
+• git commit --amend --no-edit to add a forgotten file
+• What amend does inside Git (new commit, same parent) and git reflog
+• Why you never amend a pushed commit, and how to fix forward
+• DevOps: commit IDs, Jenkins builds and traceability
+
+🧾 Cheat sheet (copy & practice)
+git log
+git log --oneline
+git log --oneline -n 2
+git log --stat -1
+git log -p -1
+git show c5fefa4
+git show HEAD~1:app.py
+git log --oneline --grep="payment"
+git log --oneline -- app.py
+git commit --amend -m "Fix login bug"
+git commit --amend --no-edit
+git reflog
+
+🎤 Interview question: What does git commit --amend do? Why should you not amend a commit that is already pushed?
+
+🧠 Quiz: You amend a commit. What happens to its commit ID? (answer in the comments, reveal in the next episode)
+
+📝 Homework: Make a commit with a typo on purpose, fix it with git commit --amend, and compare git log --oneline before and after.
+
+➡️ Next: Ep 6: .gitignore, never commit secrets again (next Tuesday, 4 PM IST)
+
+🔔 Subscribe to Tech-dev for practical DevOps, SRE, Cloud, Linux & Git videos.
+
+💬 Typo in the message or a forgotten file: which one happens to you more?
+
+#Git #GitHub #DevOps #TechDev
+
+TAGS
+git commit --amend, git amend, git log, git log oneline, git show, fix last commit, change git commit message, git reflog, git tutorial, git for beginners, git and github, learn git, devops, tech-dev

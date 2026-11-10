@@ -1,0 +1,91 @@
+{
+ "title": "Fix Your Last Git Commit (Typo or Missing File) | Git & GitHub Ep 5",
+ "description": "Typo in your commit message? Forgot a file? Episode 5 shows how to read your history with git log and fix your last commit with git commit --amend, plus the one time you should never amend.\n\nI'm Shivam Singh Verma, a DevOps & SRE engineer with 5 years of experience building CI/CD pipelines, running cloud infrastructure on AWS & GCP, and managing projects.\n\n📺 Git & GitHub: Beginner to Advanced, Episode 5: new episode every Tuesday at 4 PM IST.\n\n⏱️ Chapters\n0:00 Intro\n0:44 Last episode\n1:17 The big idea\n1:58 Hands-on: git log\n3:13 git show\n3:49 Search your history\n4:26 The oops commit\n5:09 Fix the message: --amend -m\n5:44 Add a forgotten file: --no-edit\n6:33 What Git does inside\n7:14 The golden rule\n7:24 Mistake: amend after push\n8:09 The fix: fix forward\n8:44 DevOps example\n9:34 Interview corner\n9:57 Quiz\n10:19 Recap\n\n🔑 What you'll learn\n• git log and the four parts of a log entry\n• git log --oneline, -n, --reverse, --stat and -p\n• git show with a commit ID, HEAD~1 and HEAD~1:file\n• Searching history with --author, --grep and -- file\n• git commit --amend -m to fix a commit message\n• git commit --amend --no-edit to add a forgotten file\n• What amend does inside Git (new commit, same parent) and git reflog\n• Why you never amend a pushed commit, and how to fix forward\n• DevOps: commit IDs, Jenkins builds and traceability\n\n🧾 Cheat sheet (copy & practice)\ngit log\ngit log --oneline\ngit log --oneline -n 2\ngit log --stat -1\ngit log -p -1\ngit show c5fefa4\ngit show HEAD~1:app.py\ngit log --oneline --grep=\"payment\"\ngit log --oneline -- app.py\ngit commit --amend -m \"Fix login bug\"\ngit commit --amend --no-edit\ngit reflog\n\n🎤 Interview question: What does git commit --amend do? Why should you not amend a commit that is already pushed?\n\n🧠 Quiz: You amend a commit. What happens to its commit ID? (answer in the comments, reveal in the next episode)\n\n📝 Homework: Make a commit with a typo on purpose, fix it with git commit --amend, and compare git log --oneline before and after.\n\n➡️ Next: Ep 6: .gitignore, never commit secrets again (next Tuesday, 4 PM IST)\n\n🔔 Subscribe to Tech-dev for practical DevOps, SRE, Cloud, Linux & Git videos.\n\n💬 Typo in the message or a forgotten file: which one happens to you more?\n\n#Git #GitHub #DevOps #TechDev",
+ "tags": [
+  "git commit --amend",
+  "git amend",
+  "git log",
+  "git log oneline",
+  "git show",
+  "fix last commit",
+  "change git commit message",
+  "git reflog",
+  "git tutorial",
+  "git for beginners",
+  "git and github",
+  "learn git",
+  "devops",
+  "tech-dev"
+ ],
+ "duration": 656.2,
+ "chapters": [
+  [
+   0,
+   "Intro"
+  ],
+  [
+   44.855625,
+   "Last episode"
+  ],
+  [
+   77.07020833333333,
+   "The big idea"
+  ],
+  [
+   118.41125000000001,
+   "Hands-on: git log"
+  ],
+  [
+   193.62466666666666,
+   "git show"
+  ],
+  [
+   229.44716666666667,
+   "Search your history"
+  ],
+  [
+   266.28695833333336,
+   "The oops commit"
+  ],
+  [
+   309.97212499999995,
+   "Fix the message: --amend -m"
+  ],
+  [
+   344.940625,
+   "Add a forgotten file: --no-edit"
+  ],
+  [
+   393.88191666666665,
+   "What Git does inside"
+  ],
+  [
+   434.285125,
+   "The golden rule"
+  ],
+  [
+   444.3048333333333,
+   "Mistake: amend after push"
+  ],
+  [
+   489.5924166666666,
+   "The fix: fix forward"
+  ],
+  [
+   524.6454583333333,
+   "DevOps example"
+  ],
+  [
+   574.7104166666667,
+   "Interview corner"
+  ],
+  [
+   597.2512083333334,
+   "Quiz"
+  ],
+  [
+   619.189625,
+   "Recap"
+  ]
+ ]
+}
