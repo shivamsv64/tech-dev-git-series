@@ -95,11 +95,25 @@
    "status": "scheduled",
    "title": "Typo in your last Git commit? Fix it like this #shorts #git",
    "live": "2026-11-11T11:30:00+05:30",
-   "metricool_id": 422874010,
+   "metricool_id": 423038046,
    "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-4024695753375071501",
    "engine": "skit",
-   "voice_chars": 88
-  }
+   "voice_chars": 88,
+   "route": "vidiq",
+   "uploaded_via": "zapier",
+   "yt_state": "scheduled_on_youtube",
+   "key": "TD-git-ep05-short",
+   "video_id": "gQqO0Ogzmzg",
+   "youtube_publish_at": "2026-11-11T11:30:00+05:30",
+   "metricool_note": "Metricool post set to draft to avoid a duplicate"
+  },
+  "route": "vidiq",
+  "uploaded_via": "zapier",
+  "yt_state": "scheduled_on_youtube",
+  "key": "TD-git-ep05",
+  "video_id": "QsPkXiatAkw",
+  "youtube_publish_at": "2026-11-10T17:25:00+05:30",
+  "metricool_note": "Metricool post 422871381 ERROR: account limit; re-uploaded via Zapier 10 Nov"
  },
  {
   "ep": 6,
