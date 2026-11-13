@@ -121,7 +121,9 @@
   "title": ".gitignore — never commit secrets again",
   "analogy": "Packing for a trip: don't pack your house keys (.env) or the whole kitchen (node_modules)",
   "devops": "Real incident type: AWS keys pushed to a public repo get abused within minutes → rotate keys",
-  "status": "planned"
+  "status": "in_progress_local",
+  "claimed_by": "mac",
+  "claimed_at": "2026-11-13T14:55:00+05:30"
  },
  {
   "ep": 7,
