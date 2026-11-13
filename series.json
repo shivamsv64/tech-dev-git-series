@@ -123,7 +123,11 @@
   "devops": "Real incident type: AWS keys pushed to a public repo get abused within minutes → rotate keys",
   "status": "in_progress_local",
   "claimed_by": "mac",
-  "claimed_at": "2026-11-13T14:55:00+05:30"
+  "claimed_at": "2026-11-13T14:55:00+05:30",
+  "render": "done",
+  "render_note": "rendered 13 Nov; YouTube upload blocked by API quota, retry after 13:30 IST 14 Nov",
+  "voice": "chatterbox-shivam",
+  "music": "none"
  },
  {
   "ep": 7,
