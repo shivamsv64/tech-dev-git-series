@@ -34,11 +34,11 @@ LOOKS = {
 }
 SERIES = {
     'devops': dict(look='mission', show='DevOps & SRE Zero to Hero',
-                   line='📺 Day {n} of 100 · DevOps & SRE Zero to Hero: a free course with a new episode every day at 8 PM IST.'),
+                   line='📺 Day {n} of 100 · DevOps & SRE Zero to Hero: a free course with a new episode every Thursday at 8 PM IST.'),
     'linux': dict(look='city', show='Linux Zero to Hero',
-                  line='📺 Linux Zero to Hero, Episode {n}: a free course with new episodes every Tue, Thu & Sat at 5 PM IST.'),
+                  line='📺 Linux Zero to Hero, Episode {n}: a free course with a new episode every Saturday at 5 PM IST.'),
     'git': dict(look='city', show='Git & GitHub: Beginner to Advanced',
-                line='📺 Git & GitHub: Beginner to Advanced, Episode {n}: new episodes every Mon, Wed & Fri at 4 PM IST.'),
+                line='📺 Git & GitHub: Beginner to Advanced, Episode {n}: new episodes every Tuesday at 4 PM IST.'),
 }
 INTRO_CLIP = os.path.join(HERE, 'assets', 'voice', 'intro_shivam.mp3')
 INTRO_TEXT = "Hi, I'm Shivam Singh Verma, and welcome to Tech-dev."
@@ -536,22 +536,61 @@ def caption(L, sc, lt):
     for (c0, c1, s) in sc['caps']:
         if c0 - 0.05 <= lt < c1 + 0.1:
             a = win(lt, c0 - 0.05, .15); f = font('bold', 44)
+            hon = host_pose(sc) is not None; maxw_ = 1180 if hon else 1500; cw_ = W - 2 * (HOST_W_MAX + 60) // 2 if hon else W
             words = s.split(); lines, cur = [], []
             for w in words:
-                if f.getlength(strip_marks(' '.join(cur + [w]))) > 1500 and cur: lines.append(cur); cur = [w]
+                if f.getlength(strip_marks(' '.join(cur + [w]))) > maxw_ and cur: lines.append(cur); cur = [w]
                 else: cur.append(w)
             lines.append(cur); lh = 62; bh = 30 + lh * len(lines)
             maxw = max(f.getlength(strip_marks(' '.join(l))) for l in lines)
-            bx, by = (W - maxw) / 2 - 36, H - 70 - bh
+            bx, by = (cw_ - maxw) / 2 - 36, H - 70 - bh
             box = Image.new('RGBA', (int(maxw + 72), bh), (0, 0, 0, 0))
             ImageDraw.Draw(box).rounded_rectangle([0, 0, box.width - 1, bh - 1], 18, fill=(4, 8, 20, 190)); put(L, box, bx, by, a)
             hl = set(w.lower().strip('.,!?:;') for w in sc['spec'].get('hl', []))
             for li, line in enumerate(lines):
-                x = (W - f.getlength(strip_marks(' '.join(line)))) / 2; y = by + 12 + li * lh
+                x = (cw_ - f.getlength(strip_marks(' '.join(line)))) / 2; y = by + 12 + li * lh
                 for w in line:
                     lit = w.startswith('*') or w.rstrip('.,!?:;').endswith('*') or w.lower().strip('.,!?:;*') in hl
                     ww = strip_marks(w); text(L, ww, x - 4, y, 44, 'warm' if lit else WHITE, 'bold', a); x += f.getlength(ww + ' ')
             return
+
+# ------------------------------------------------------------------ host (Shivam's character, 15 Nov 2026)
+# EP['host'] = True turns it on. Pose per scene: spec 'host': '<pose>' | None (hide); default by scene type.
+HOST_DIR = os.environ.get('HOST_POSES', os.path.expanduser('~/tech-dev-automation/characters/shivam/poses'))
+HOST_POSE = dict(hook='shocked', title='wave', bullets='explain', chips=None, terminal='armscrossed', quiz=None,
+                 qa='think', statement='armscrossed', compare='explain', timeline='explain', bars='explain',
+                 pipeline='explain', swap='explain', outro='wave')
+HOST_H, HOST_W_MAX = 540, 470
+
+@functools.lru_cache(None)
+def host_sprite(pose, h=HOST_H):
+    im = Image.open(os.path.join(HOST_DIR, pose + '.png')).convert('RGBA'); im = im.crop(im.getbbox())
+    if pose == 'thumbsup': im = im.crop((0, 0, im.width, int(im.height * 0.42)))   # bust crop of the tall close-up
+    w = int(im.width * h / im.height)
+    if w > HOST_W_MAX: h = int(h * HOST_W_MAX / w); w = HOST_W_MAX
+    return im.resize((w, h), Image.LANCZOS)
+
+def host_pose(sc):
+    if not EP.get('host'): return None
+    sp = sc['spec']
+    return sp['host'] if 'host' in sp else HOST_POSE.get(sc['kind'], 'explain')
+
+def host_layer(img, i, lt):
+    sc = SCENES[i]; pose = host_pose(sc)
+    prev = host_pose(SCENES[i - 1]) if i > 0 else None
+    if sc['kind'] == 'outro' and pose == 'wave' and lt > sc['t1'] - sc['t0'] - 2.6: pose, prev, lt = 'thumbsup', 'wave', lt - (sc['t1'] - sc['t0'] - 2.6)
+    k = 1.0 if pose == prev else ease_io(lt / 0.35)
+    def draw(p, a, sc_):
+        if not p or a <= 0.01: return
+        spr = host_sprite(p)
+        if sc_ != 1.0: spr = spr.resize((max(1, int(spr.width * sc_)), max(1, int(spr.height * sc_))), Image.LANCZOS)
+        put(img, spr, W - 36 - spr.width, H - 6 - spr.height, a)
+    if k < 1.0: draw(prev, 1 - k, 1.0)
+    draw(pose, k, 0.94 + 0.06 * k)
+
+def host_on(t):
+    i = next((j for j, s in enumerate(SCENES) if s['t0'] <= t < s['t1']), len(SCENES) - 1)
+    return host_pose(SCENES[i]) is not None
 
 def frame_at(t):
     i = next((j for j, s in enumerate(SCENES) if s['t0'] <= t < s['t1']), len(SCENES) - 1)
@@ -567,6 +606,7 @@ def frame_at(t):
     if fo < 0.999:
         arr = np.asarray(L, dtype=np.float32); arr[..., 3] *= fo; L = Image.fromarray(arr.astype(np.uint8), 'RGBA')
     img.alpha_composite(L)
+    if host_pose(sc) or (i > 0 and host_pose(SCENES[i - 1])): host_layer(img, i, lt)
     H2 = Image.new('RGBA', (W, H), (0, 0, 0, 0)); header(H2, t); caption(H2, sc, lt); img.alpha_composite(H2)
     return img.convert('RGB')
 
@@ -611,6 +651,7 @@ def clicks(d, seed=3):
     return out
 
 def music_bed(n):
+    if EP.get('music') in ('none', None, [], False) and 'music' in EP: return np.zeros(n, np.float32)   # no music (long videos)
     tracks = [load_mono(os.path.join(HERE, 'assets', 'music', m)) for m in EP.get('music', TH['music'])]
     xf = int(2.5 * SR); bed = np.zeros(0, np.float32); k = 0
     while len(bed) < n:
@@ -692,6 +733,10 @@ def thumbnail(path):
         f = font('mono', 40); cw = f.getlength(tb['chip']) + 50; cy = y + 84 * len(tb.get('lines', [])[:2]) + 20
         d.rounded_rectangle([60, cy, 60 + cw, cy + 70], 14, fill=(10, 14, 26, 235), outline=TH['ok'] + (255,), width=3)
         d.text((85, cy + 10), tb['chip'], font=f, fill=TH['ok'])
+    if EP.get('host') and tb.get('host', 'shocked'):                # host cutout on every thumbnail (Shivam, 14 Nov)
+        hh = int(tb.get('host_h', 520)); hs = host_sprite(tb.get('host', 'shocked'), 640)
+        hs = hs.resize((int(hs.width * hh / hs.height), hh), Image.LANCZOS)
+        img.alpha_composite(hs, (int(tb.get('host_x', tw_ - hs.width + 10)), th_ - hs.height))
     f = font('bold', 36); bt = '>_ Tech-dev'; bw = f.getlength(bt) + 44
     d.rounded_rectangle([40, 40, 40 + bw, 104], 14, fill=(10, 14, 26, 235), outline=TH['accent'] + (255,), width=3)
     d.text((62, 47), bt, font=f, fill=WHITE)

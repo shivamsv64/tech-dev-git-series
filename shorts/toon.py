@@ -40,6 +40,7 @@ CAST = {
               'glasses': True},
     'khanna': {'name': 'Khanna sir', 'skin': (214, 168, 128), 'top': (236, 236, 226), 'hair': 'bald',
                'haircol': (60, 52, 48), 'mustache': True, 'tie': RED},
+    'shivam': {'name': 'Shivam', 'skin': (196, 142, 104), 'top': (206, 38, 44), 'hair': 'messy', 'haircol': (24, 20, 20)},   # host (pose pack)
     'tara': {'name': 'Tara', 'skin': (236, 196, 160), 'top': (196, 112, 146), 'hair': 'ponytail', 'haircol': (70, 40, 30)},
 }
 

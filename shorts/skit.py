@@ -25,6 +25,7 @@ BOIL_FPS = 10
 CTA_CLIP = os.path.join(ROOT, 'voice', 'assets', 'cta.mp3')
 CTA_TEXT = 'Watch the full *episode* on Tech-dev, and subscribe!'
 VOICE = 'am_michael'
+SPEED = 1.05          # chatterbox-shivam specs: voice from the spec, speed 1.0, cache in <outdir>/vo (voice/prefill_engine_vo.py)
 CAP_Y = 1350          # caption centre (kept above YouTube's bottom title/buttons)
 SAFE_X = (60, 960)    # keep text left of YouTube's right-side buttons
 
@@ -51,7 +52,7 @@ def tts_clip(text, cache):
     import tts
     text = re.sub(r'(^|\s)--(\w)', r'\1dash dash \2', text.replace('*', ''))
     text = re.sub(r'(^|\s)-(\w)\b', r'\1dash \2', text)
-    parts = [tts.synth_sentence(s, VOICE, 1.05, cache) for s in tts.sentences(text)]
+    parts = [tts.synth_sentence(s, VOICE, SPEED, cache) for s in tts.sentences(text)]
     gap = np.zeros(int(0.1 * tts.SR), np.float32)
     return np.concatenate([np.concatenate([p, gap]) for p in parts])[:-len(gap)]
 
@@ -132,6 +133,31 @@ def scene_at(scenes, t):
 SEATED = {1: [(540, 0)], 2: [(380, 0), (780, 1)]}
 
 
+# ------------------------------------------------------------------ host: Shivam's character (pose pack), 15 Nov 2026
+HOST_DIR = os.environ.get('HOST_POSES', os.path.expanduser('~/tech-dev-automation/characters/shivam/poses'))
+HOST_BY_POSE = {'headhold': 'shocked', 'point': 'point', 'cheer': 'thumbsup', 'wave': 'wave', 'think': 'think',
+                'arms': 'armscrossed', 'explain': 'explain', 'walk': 'walk'}
+HOST_BY_MOOD = {'shock': 'shocked', 'panic': 'shocked', 'tired': 'think', 'worried': 'think', 'determined': 'armscrossed',
+                'calm': 'explain', 'happy': 'wave', 'proud': 'thumbsup'}
+_HOST = {}
+
+
+def host_img(c):
+    name = c.get('host') or HOST_BY_POSE.get(c.get('pose')) or HOST_BY_MOOD.get(c.get('mood'), 'explain')
+    if name not in _HOST:
+        im = Image.open(os.path.join(HOST_DIR, name + '.png')).convert('RGBA'); _HOST[name] = im.crop(im.getbbox())
+    return _HOST[name]
+
+
+def put_host(img, c, cx, bottom, height, crop=1.0):
+    """paste the pose centred at cx (world px), feet/bottom at `bottom`, `height` = full-figure height; crop<1 keeps the top part"""
+    im = host_img(c)
+    if crop < 1.0: im = im.crop((0, 0, im.width, int(im.height * crop)))
+    h = int(height * crop * SS); w = int(im.width * h / im.height)
+    im = im.resize((w, h), Image.LANCZOS)
+    img.paste(im, (int(cx * SS - w / 2), int(bottom * SS - h)), im)
+
+
 def draw_world(spec, s, boil):
     acc, _ = T.ACCENT[spec.get('series', 'linux')]
     img = Image.new('RGB', (W * SS, H * SS), T.PAPER)
@@ -170,8 +196,11 @@ def draw_world(spec, s, boil):
                 hy = floor - 4.02 * R
             if 'lines' in (c.get('fx') or []):
                 T.fx(ink, ['lines'], hx, hy, R, boil, acc)
-            T.person(ink, c['who'], hx, hy, R, c.get('mood', 'calm'), c.get('pose', 'type' if desk_set else 'rest'),
-                     boil, acc, stand=stand, look=tuple(c.get('look', (0, 0))))
+            if c['who'] == 'shivam':
+                put_host(img, c, hx, 1250 if desk_set and not stand else (1300 if not desk_set else 1240), 900 if n == 1 else 760)
+            else:
+                T.person(ink, c['who'], hx, hy, R, c.get('mood', 'calm'), c.get('pose', 'type' if desk_set else 'rest'),
+                         boil, acc, stand=stand, look=tuple(c.get('look', (0, 0))))
             heads.append((hx, hy, R, c))
         if desk_set:
             T.desk(ink, 1180, night, acc, boil, laptop=s.get('laptop', True), mug_at=s.get('mug', True),
@@ -192,12 +221,19 @@ def draw_world(spec, s, boil):
         R, hx, hy = 290, 540, 830
         if 'lines' in (s.get('fx') or []):
             T.fx(ink, ['lines'], hx, hy, R, boil, acc)
-        T.person(ink, s.get('who', 'rohan'), hx, hy, R, s.get('mood', 'shock'), s.get('pose', 'rest'), boil, acc,
-                 look=tuple(s.get('look', (0, 0))))
+        if s.get('who') == 'shivam':
+            put_host(img, s, 540, 1500, 2000, crop=0.62)       # close-up: head + chest fill the frame
+        else:
+            T.person(ink, s.get('who', 'rohan'), hx, hy, R, s.get('mood', 'shock'), s.get('pose', 'rest'), boil, acc,
+                     look=tuple(s.get('look', (0, 0))))
         if night:
             T.screen_glow(img, hx, hy, R)
         T.fx(ink, [f for f in (s.get('fx') or []) if f != 'lines'], hx, hy, R, boil, acc)
         focus = (hx, hy + 60)
+    elif shot == 'eye' and s.get('who') == 'shivam':                 # no drawn giant eye for him: tight shocked close-up
+        T.set_bg(ink, img, 'plain_night' if night else 'plain', acc, boil)
+        put_host(img, dict(s, host=s.get('host', 'shocked')), 540, 1640, 2700, crop=0.5)
+        focus = (540, 900)
     elif shot == 'eye':
         T.giant_eye(ink, s.get('who', 'rohan'), s.get('mood', 'tired'), boil, acc)
         focus = (560, 930)
@@ -674,7 +710,12 @@ def main():
         print(__doc__); sys.exit(1)
     spec = load(sys.argv[1]); outdir = sys.argv[2]
     os.makedirs(outdir, exist_ok=True)
+    global VOICE, SPEED
     cache = os.path.join(os.path.expanduser('~/.cache'), 'td-skit-tts')
+    if spec.get('voice'):
+        VOICE = spec['voice']
+        if VOICE.startswith('chatterbox'):
+            SPEED, cache = spec.get('speed', 1.0), os.path.join(outdir, 'vo')
     scenes, total = build(spec, cache)
     print(f'Short length: {total:.1f}s')
     for s in scenes:
