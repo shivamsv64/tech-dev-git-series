@@ -105,7 +105,13 @@
    "key": "TD-git-ep05-short",
    "video_id": "gQqO0Ogzmzg",
    "youtube_publish_at": "2026-11-11T11:30:00+05:30",
-   "metricool_note": "Metricool post set to draft to avoid a duplicate"
+   "metricool_note": "Metricool post set to draft to avoid a duplicate",
+   "instagram": {
+    "status": "scheduled",
+    "via": "vidiq",
+    "post_id": "18b22787-8b79-4b89-bc70-2932da1612d7",
+    "live": "2026-11-16T11:30:00+05:30"
+   }
   },
   "route": "vidiq",
   "uploaded_via": "zapier",
@@ -150,7 +156,13 @@
    "key": "TD-git-ep06-short",
    "video_id": "6AXgIY1c3sk",
    "youtube_publish_at": "2026-11-18T11:30:00+05:30",
-   "ai_label": true
+   "ai_label": true,
+   "instagram": {
+    "status": "scheduled",
+    "via": "vidiq",
+    "post_id": "571f6e57-4d7b-403d-9c5f-3f2042d4d7fe",
+    "live": "2026-11-18T11:30:00+05:30"
+   }
   }
  },
  {
