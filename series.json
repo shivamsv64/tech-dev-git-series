@@ -58,23 +58,27 @@
  {
   "ep": 4,
   "date": "Wed 4 Nov",
-  "title": "status, add & commit — the 3 areas of Git",
+  "title": "Git 10 Minute Mein Master Karo (Hindi)",
   "analogy": "Sending a courier: items on table (working dir) → packed box (staging) → shipped with tracking no. (commit)",
   "devops": "Small focused commits = easy code review & safe deploys",
-  "status": "scheduled",
+  "status": "in_progress_local",
   "video_url": "https://raw.githubusercontent.com/shivamsv64/tech-dev-git-series/main/media/ep04/video.mp4",
   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=-1621614351431417578",
   "metricool_id": 416333592,
-  "engine": "v2",
+  "engine": "living-diagram",
   "voice_chars": 0,
   "short": {
-   "status": "scheduled",
-   "title": "When git commit skips your brand new file #shorts #git",
-   "live": "2026-11-05T11:30:00+05:30",
-   "metricool_id": 416333842,
-   "planner": "https://app.metricool.com/planner/calendar?blogId=7777398&openWithPostUuid=4273026272401443644",
-   "engine": "skit"
-  }
+   "status": "in_progress_local",
+   "live": "2026-11-25T11:30:00+05:30",
+   "out_dir": "out/prep/git/04m/short"
+  },
+  "_legacy_title": "status, add & commit — the 3 areas of Git",
+  "claimed_by": "mac",
+  "claimed_at": "2026-11-20",
+  "format": "master10-hindi",
+  "topic": "Master Git in 10 minutes (Hindi)",
+  "live": "2026-11-24T16:00:00+05:30",
+  "out_dir": "out/prep/git/04m/long"
  },
  {
   "ep": 5,
